@@ -542,7 +542,7 @@ namespace AutoAPKTool
 
         private void OpenSourceUrl_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/2666fff/APKToolGUI");
+            Process.Start("https://github.com/2666fff/APKToolGUI"); 
         }
 
         private void btnManifestOnlyClick(object sender, EventArgs e)
