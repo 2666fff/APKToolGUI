@@ -1,5 +1,5 @@
 # ApkToolBox Android一体式工具箱
-<img width="888" height="780" alt="image" src="https://github.com/user-attachments/assets/d3a82db9-f7b9-478c-9f8d-a84549cde826" />
+<img width="888" height="780" alt="image" src="https://github.com/2666fff/APKToolGUI/blob/master/screenshots/pic.png?raw=true" />
 
 
 ##### 主要功能
