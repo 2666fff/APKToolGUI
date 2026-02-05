@@ -474,33 +474,10 @@ namespace AutoAPKTool
             }).Start();
         }
 
-        private void Btn_Dec_odex(object sender, EventArgs e)
+        private void Btn_MD5Calculator_Click(object sender, EventArgs e)
         {
-            var text = this.open_path.Text;
-
-            if (!Directory.Exists(Constants.OdexFramework))
-            {
-                MessageBox.Show(Resources.no_find_framework, Resources.info);
-                return;
-            }
-
-            if (!File.Exists(text) || Path.GetExtension(text) != ".odex")
-            {
-                MessageBox.Show(Resources.no_find_odex, Resources.info);
-                return;
-            }
-
-            var saveFileDialog = new SaveFileDialog
-            {
-                Filter = Resources.files,
-                InitialDirectory = Path.GetDirectoryName(text),
-                FileName = Path.GetFileNameWithoutExtension(text)
-            };
-            if (saveFileDialog.ShowDialog() != DialogResult.OK) return;
-            var outputFolderName = saveFileDialog.FileName.ToString();
-            var decodex = Util.DecOdex(text, outputFolderName);
-
-            new Thread(() => { ExcuteSync(ExcuteJava, decodex, true); }).Start();
+            var f = new MD5CalculatorForm();
+            f.Show();
         }
 
         private void Btn_ArmToAsm_Click(object sender, EventArgs e)
@@ -551,21 +528,11 @@ namespace AutoAPKTool
             if (!File.Exists(inputApk) || Path.GetExtension(inputApk) != ".apk")
             {
                 MessageBox.Show(Resources.no_find_apk, Resources.info);
-            }
-            else
-            {
-                var saveFileDialog = new SaveFileDialog
-                {
-                    Filter = Resources.files,
-                    InitialDirectory = Path.GetDirectoryName(inputApk),
-                    FileName = Path.GetFileNameWithoutExtension(inputApk)
-                };
-                if (saveFileDialog.ShowDialog() != DialogResult.OK) return;
-                var outputFolderName = saveFileDialog.FileName.ToString();
-                string args = Util.GetManifestOnlyStr(inputApk, outputFolderName);
-                new Thread(() => { ExcuteSync(ExcuteJava, args, true); }).Start();
+                return;
             }
 
+            var args = Util.GetAdbInstallArg(inputApk);
+            new Thread(() => { ExcuteSync(ExcuteCmd, args, true); }).Start();
         }
     }
 }

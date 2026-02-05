@@ -81,9 +81,9 @@
             return string.Format("-jar " + Constants.ApkSigner + " sign --v4-signing-enabled true --ks " + Constants.KeyStore + "  --ks-key-alias artw --ks-pass pass:232425 --key-pass pass:232425 " + apkName);
         }
         
-        public static string GetManifestOnlyStr(string inputApk, string outputFolderName)
+        public static string GetAdbInstallArg(string inputApk)
         {
-            return $"-jar \"{Constants.JarApktool}\" d -s -r \"{inputApk}\" -o \"{outputFolderName}\"";
+            return $"/c adb install -r \"{inputApk}\"";
         }
         
         public static string clearAPKtoolData()

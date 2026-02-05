@@ -164,7 +164,7 @@
 			// btn_jadx
 			// 
 			this.btn_jadx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.btn_jadx.Location = new System.Drawing.Point(308, 114);
+			this.btn_jadx.Location = new System.Drawing.Point(308, 118);
 			this.btn_jadx.Name = "btn_jadx";
 			this.btn_jadx.Size = new System.Drawing.Size(95, 33);
 			this.btn_jadx.TabIndex = 12;
@@ -223,9 +223,9 @@
 			this.dec_odex.Name = "dec_odex";
 			this.dec_odex.Size = new System.Drawing.Size(95, 33);
 			this.dec_odex.TabIndex = 17;
-			this.dec_odex.Text = "odex反编译";
+			this.dec_odex.Text = "MD5计算器";
 			this.dec_odex.UseVisualStyleBackColor = true;
-			this.dec_odex.Click += new System.EventHandler(this.Btn_Dec_odex);
+			this.dec_odex.Click += new System.EventHandler(this.Btn_MD5Calculator_Click);
 			// 
 			// getArgs
 			// 
@@ -314,7 +314,7 @@
 			this.btnManifestOnly.Name = "btnManifestOnly";
 			this.btnManifestOnly.Size = new System.Drawing.Size(107, 33);
 			this.btnManifestOnly.TabIndex = 21;
-			this.btnManifestOnly.Text = "提取Manifest";
+			this.btnManifestOnly.Text = "adb安装";
 			this.btnManifestOnly.UseVisualStyleBackColor = true;
 			this.btnManifestOnly.Click += new System.EventHandler(this.btnManifestOnlyClick);
 			// 
