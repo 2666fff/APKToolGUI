@@ -5,11 +5,13 @@
 ##### 主要功能
 * 反编译apk，回编译apk，支持批量
 * 反编译，回编译dex
+* dex转jar，jar转dex
 * 一键获取adb shell am start命令
 * 集成jadx，jd-gui
 * 支持自定义签名
 * 支持app查壳
-* 支持odex反编译
+* 支持adb安装APK
+* 支持MD5计算器（实时计算MD5值）
 
 ###### 更新日志
    移步Release
