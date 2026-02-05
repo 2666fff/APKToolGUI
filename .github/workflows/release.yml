@@ -5,7 +5,8 @@ permissions:
 # 普通提交仅编译，Tag 提交编译+发布
 on:
   push:
-    tags: ['v*']            # 推送 Tag（如 v1.6.1）时编译+发布
+    tags:
+      - 'v*'            # 推送 Tag（如 v1.6.1）时编译+发布
   pull_request:
     branches: ['*']
 
@@ -15,6 +16,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整历史，包括标签
+      
+      - name: Debug info
+        run: |
+          Write-Host "Git ref: ${{ github.ref }}"
+          Write-Host "Tag name: ${{ github.ref_name }}"
+          Write-Host "Event: ${{ github.event_name }}"
+        shell: pwsh
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
